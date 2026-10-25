@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f3ee">
+  <meta name="description" content="Umay'ın hikâyesi burada başlıyor. Aileye özel dijital anı defteri.">
+  <title>Umay — Bir Ömürlük Hikâye</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div id="gate" class="gate">
+    <div class="gate-card">
+      <div class="monogram">U<span>✳</span></div>
+      <p class="eyebrow">KÜÇÜK BİR MUCİZE</p>
+      <h1>Umay’ın dünyasına<br><em>hoş geldin.</em></h1>
+      <p class="muted">Bu küçük köşe yalnızca ailemiz için hazırlandı.</p>
+      <form id="gateForm" class="gate-form">
+        <label for="loginEmail">E-posta adresi</label>
+        <input id="loginEmail" type="email" placeholder="ornek@eposta.com" autocomplete="username" required>
+        <label for="accessCode">Şifre</label>
+        <div class="input-row">
+          <input id="accessCode" type="password" placeholder="Aile hesabının şifresi" autocomplete="current-password" required>
+          <button class="button dark" type="submit">Giriş <span>↗</span></button>
+        </div>
+        <p id="gateError" class="error" role="status"></p>
+      </form>
+      <p class="tiny">Hesaplar yalnızca yönetici tarafından oluşturulur. Kayıt olma ekranı bulunmaz.</p>
+      <p class="security-note">Güvenli erişim Supabase Auth ve veritabanı kurallarıyla sağlanır. Yayına almadan önce README içindeki kurulum adımlarını tamamla.</p>
+    </div>
+  </div>
+
+  <main id="site" class="site hidden">
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Umay ana sayfa"><span class="brand-mark">u.</span><span>UMAY <small>ANILAR DEFTERİ</small></span></a>
+      <nav class="desktop-nav" aria-label="Ana menü">
+        <a href="#story">Hikâyesi</a><a href="#gallery">Galeri</a><a href="#letters">Mektuplar</a><a href="#milestones">Özel günler</a>
+      </nav>
+      <button id="menuToggle" class="menu-toggle" aria-label="Menüyü aç" aria-expanded="false">☰</button>
+      <button id="lockButton" class="icon-button" title="Ekranı kilitle" aria-label="Ekranı kilitle">⌑</button>
+    </header>
+    <nav id="mobileNav" class="mobile-nav hidden">
+      <a href="#story">Hikâyesi</a><a href="#gallery">Galeri</a><a href="#letters">Mektuplar</a><a href="#milestones">Özel günler</a><a href="#capsule">Zaman kapsülü</a>
+    </nav>
+
+    <section id="home" class="hero section-wrap">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="live-dot"></span> 17 EKİM 2026 · 10:53</p>
+        <h1>Bir ömürlük<br>hikâye, <em>Umay.</em></h1>
+        <p class="hero-sub">Sen geldin. Zaman aynı akıyor belki, ama artık her anın başka bir anlamı var.</p>
+        <div class="hero-actions">
+          <a class="button dark" href="#story">Hikâyeni keşfet <span>↘</span></a>
+          <button class="button outline" id="shareHero">Aileyle paylaş <span>↗</span></button>
+        </div>
+        <div class="hero-footnote"><span class="tiny-star">✳</span> Sevgiyle, ailenden sana.</div>
+      </div>
+      <div class="hero-art">
+        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+        <div class="art-sun"></div>
+        <div class="art-card">
+          <span class="art-label">THE BEGINNING</span>
+          <div class="moon-shape"></div>
+          <div class="art-stars"><i>✦</i><i>·</i><i>✧</i><i>·</i><i>✦</i></div>
+          <div class="art-caption"><span>17 / 10 / 2026</span><strong>Hoş geldin,<br>küçük mucize.</strong></div>
+        </div>
+        <div class="floating-note note-top">Dünyanın en güzel<br>başlangıcı <b>♡</b></div>
+        <div class="floating-note note-bottom"><span class="note-dot"></span> Her saniye yeni bir anı</div>
+      </div>
+      <div class="hero-scroll"><span></span> AŞAĞI KAYDIR</div>
+    </section>
+
+    <section class="counter-section section-wrap" id="story">
+      <div class="section-heading">
+        <p class="eyebrow">ZAMANIN İÇİNDEN</p>
+        <h2>Seninle geçen<br><em>her saniye.</em></h2>
+        <p>Umay’ın dünyamıza katılmasının üzerinden geçen zaman. Bir sayıdan çok daha fazlası.</p>
+      </div>
+      <div class="counter-panel">
+        <div class="counter-top"><span><span class="live-dot"></span> CANLI SAYACIN</span><span id="birthLocal">17 Ekim 2026 · 10:53</span></div>
+        <div class="counter-grid">
+          <div class="counter-cell"><strong id="years">—</strong><span>YIL</span></div>
+          <div class="counter-cell"><strong id="months">—</strong><span>AY</span></div>
+          <div class="counter-cell"><strong id="days">—</strong><span>GÜN</span></div>
+          <div class="counter-cell"><strong id="hours">—</strong><span>SAAT</span></div>
+          <div class="counter-cell"><strong id="minutes">—</strong><span>DAKİKA</span></div>
+          <div class="counter-cell seconds-cell"><strong id="seconds">—</strong><span>SANİYE</span></div>
+        </div>
+        <div class="counter-bottom"><span>Başlangıç: 17.10.2026, 10:53 (Türkiye saati)</span><span id="countdownHint">Hikâye başlamak üzere…</span></div>
+      </div>
+      <p class="section-caption">Zaman geçer. Sevgi birikir.</p>
+    </section>
+
+    <section class="quote-band">
+      <span class="quote-mark">“</span>
+      <p>Henüz dünyayı tanımıyorsun.<br>Biz ise seninle <em>dünyayı yeniden tanıyoruz.</em></p>
+      <span class="quote-signature">UMAY’A, SEVGİYLE</span>
+    </section>
+
+    <section class="gallery-section section-wrap" id="gallery">
+      <div class="section-title-row">
+        <div><p class="eyebrow">KÜÇÜK ANLAR, BÜYÜK HATIRALAR</p><h2>Anı <em>galerisi.</em></h2></div>
+        <label class="button outline upload-button" for="photoInput">＋ Fotoğraf ekle</label>
+        <input id="photoInput" type="file" accept="image/*" multiple hidden>
+      </div>
+      <p class="section-intro">Her fotoğraf, yıllar sonra yeniden açılacak bir pencere. Fotoğraflar bu prototipte yalnızca bu tarayıcıda saklanır.</p>
+      <div id="galleryGrid" class="gallery-grid">
+        <div class="gallery-empty"><span>✳</span><h3>İlk anınız burada başlasın.</h3><p>Umay’ın ilk fotoğrafını ekleyerek aile albümünü oluşturmaya başla.</p><label class="text-link" for="photoInput">İlk fotoğrafı ekle ↗</label></div>
+      </div>
+    </section>
+
+    <section class="letters-section section-wrap" id="letters">
+      <div class="letters-intro">
+        <p class="eyebrow">BİR GÜN OKUMAN İÇİN</p>
+        <h2>Sana sakladığımız<br><em>kelimeler.</em></h2>
+        <p>Belki bugün çok küçüksün. Ama bir gün bu satırlarda seni ne kadar çok sevdiğimizi göreceksin.</p>
+        <div class="letter-seal">U <span>♡</span></div>
+      </div>
+      <div class="letter-editor">
+        <div class="editor-top"><span>✉ AİLEDEN UMAY’A</span><span class="editor-private">YEREL TASLAK</span></div>
+        <label for="letterAuthor">Kimden?</label><input id="letterAuthor" type="text" maxlength="60" placeholder="Örn. Amcan">
+        <label for="letterTitle">Mektubun başlığı</label><input id="letterTitle" type="text" maxlength="100" placeholder="Büyüdüğünde hatırla…">
+        <label for="letterBody">Mektubun</label><textarea id="letterBody" rows="5" maxlength="3000" placeholder="Sevgili Umay, bugün sana söylemek istediğim şey..."></textarea>
+        <div class="editor-footer"><span id="letterCount">0 / 3000</span><button id="saveLetter" class="button dark">Mektubu sakla <span>↗</span></button></div>
+        <p class="tiny">Mektuplar bu prototipte yalnızca bu cihazın tarayıcısında saklanır.</p>
+      </div>
+      <div id="letterList" class="letter-list"></div>
+    </section>
+
+    <section class="milestones-section section-wrap" id="milestones">
+      <div class="section-title-row">
+        <div><p class="eyebrow">BİR SONRAKİ GÜZELLİĞE</p><h2>Takvimdeki <em>ilkler.</em></h2></div>
+      </div>
+      <p class="section-intro">Küçük günler de büyük günler kadar kıymetli. Özel tarihler otomatik hesaplanır.</p>
+      <div id="milestoneGrid" class="milestone-grid"></div>
+    </section>
+
+    <section class="capsule-section section-wrap" id="capsule">
+      <div class="capsule-visual"><div class="capsule-ring"></div><div class="capsule-icon">✉</div><span class="capsule-star star-a">✦</span><span class="capsule-star star-b">✧</span></div>
+      <div class="capsule-copy">
+        <p class="eyebrow">GELECEKTEN BİR MERHABA</p>
+        <h2>Bir gün açılacak<br><em>zaman kapsülü.</em></h2>
+        <p>Umay’ın gelecekte okuyacağı bir mesaj yaz. Mesaj, seçtiğin tarihe kadar bu ekranda kilitli kalır. Bu prototipte mesaj cihazında saklanır; gerçek gizli aile arşivi için sunucu tarafında koruma kurulmalıdır.</p>
+        <div class="capsule-form">
+          <label for="capsuleDate">Açılacağı tarih</label><input id="capsuleDate" type="date" value="2044-10-17" min="2026-10-17">
+          <label for="capsuleMessage">Geleceğe mesaj</label><textarea id="capsuleMessage" rows="3" maxlength="2000" placeholder="Sevgili Umay, bu mesajı okuduğunda..."></textarea>
+          <button id="saveCapsule" class="button dark">Zaman kapsülünü mühürle <span>↗</span></button>
+        </div>
+        <div id="capsuleStatus" class="capsule-status" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="share-section section-wrap">
+      <div class="share-card-preview">
+        <div class="share-card-glow"></div><span class="share-card-kicker">A LITTLE MIRACLE</span><div class="share-card-moon">☾</div><h3>Umay</h3><p>Bir ömürlük hikâye<br>17 · 10 · 2026</p><span class="share-card-bottom">SEVGİYLE, AİLESİNDEN ♡</span>
+      </div>
+      <div class="share-copy"><p class="eyebrow">GÜZEL HABERLER PAYLAŞILIR</p><h2>Umay’ın hikâyesini<br><em>paylaş.</em></h2><p>Aileye göndermek için kısa bir karşılama mesajı hazırla veya Umay için özel bir hatıra kartı oluştur.</p><div class="share-actions"><button id="shareLink" class="button dark">Bağlantıyı paylaş <span>↗</span></button><button id="makeCard" class="button outline">Hatıra kartı oluştur</button></div><p class="tiny">Bağlantı paylaşımı, sitenin yayınlandıktan sonraki adresini kullanır. Gerçek özel erişim için yayınlama öncesi güvenli kimlik doğrulaması gerekir.</p></div>
+    </section>
+
+    <footer class="footer">
+      <a class="brand" href="#home"><span class="brand-mark">u.</span><span>UMAY <small>ANILAR DEFTERİ</small></span></a>
+      <p>Senin hikâyen, bizim en güzel hatıramız.</p>
+      <a href="#home" class="back-top">BAŞA DÖN ↑</a>
+      <div class="footer-bottom"><span>© 2026 · Umay’a sevgiyle hazırlandı.</span><span>Bir ömürlük hikâye.</span></div>
+    </footer>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
